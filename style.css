@@ -1,0 +1,8 @@
+body.dark {
+    background-color: #1a1a1a;
+    color: white;
+}
+.dark input, .dark button {
+    background-color: #333;
+    color: white;
+}
