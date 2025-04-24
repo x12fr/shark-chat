@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shark Chat - Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-blue-600 text-white flex items-center justify-center h-screen">
+  <div class="text-center">
+    <img src="shark.png" alt="Shark Logo" class="mx-auto w-48 mb-4">
+    <h1 class="text-4xl font-bold mb-6">Shark</h1>
+    <form id="loginForm" class="space-y-4">
+      <input type="text" placeholder="Username" id="username" class="block w-64 p-2 text-black rounded">
+      <input type="password" placeholder="Password" id="password" class="block w-64 p-2 text-black rounded">
+      <button type="submit" class="bg-blue-800 px-4 py-2 rounded hover:bg-blue-900">Login</button>
+    </form>
+  </div>
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      localStorage.setItem("username", username);
+      localStorage.setItem("isAdmin", username === "X12" && password === "331256444");
+      window.location.href = "chat.html";
+    });
+  </script>
+</body>
+</html>
